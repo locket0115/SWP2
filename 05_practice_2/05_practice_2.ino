@@ -1,5 +1,4 @@
 #define PIN_LED 7
-unsigned int count;
 
 void setup() {
   pinMode(PIN_LED, OUTPUT);
@@ -7,11 +6,13 @@ void setup() {
   while(!Serial);
 
   Serial.println("__init__");
-  count = 0;
   digitalWrite(PIN_LED, 1);
 }
 
 void loop() {
+  Serial.println("0s");
+  
+  digitalWrite(PIN_LED, 1);
   delay(1000);
 
   Serial.println("1s");
@@ -26,6 +27,8 @@ void loop() {
   }
 
   digitalWrite(PIN_LED, 0);
+
+  Serial.println("2s");
 
   while(1);
 }
